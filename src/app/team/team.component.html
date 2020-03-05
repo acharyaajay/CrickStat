@@ -1,0 +1,9 @@
+<H1> Teams</H1>
+<ul *ngIf="_list">
+
+    <li *ngFor='let item of _list'>
+        <p class="name">Team Name: {{item.teamName}}</p>
+        <p class="name"> Cut Off Date : ({{ item.cutOffDate | date }})</p>
+       
+    </li>
+</ul>

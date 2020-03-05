@@ -1,0 +1,41 @@
+<div>
+    <tabset>
+      <tab heading="Team 1" id="tab1">
+        <p>
+          <button class="btn btn-primary" (click)="addPlayer(0)">Add Player</button>
+        </p>
+<accordion>
+    <div class="card border-primary mb-1" style="max-width: 540px;" *ngFor="let player of players">
+    <accordion-group heading="{{player.name}}">
+        <div class="row no-gutters">
+            <div class="col-md-4"><img src={{player.photoPath}} class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{player.dateOfBirth | date:'longDate' }}</h5>
+                <p class="card-text">Gender: {{player.gender}}<br/>
+                                     Email: {{player.email}}<br/>
+                                     Phone Number:{{player.phoneNumber}}</p>
+                <p class="card-text"><small class="text-muted">Active Player: {{player.active}}</small></p>
+                <a href="#" class="btn btn-primary">Check-In</a>
+              </div>
+            </div>
+          </div>
+    </accordion-group>
+    </div>
+  </accordion>
+  <pre class="card card-block card-header mb-3">Model: {{selectedValue | json}}</pre>
+<pre class="card card-block card-header mb-3">Selected option: {{selectedOption | json}}</pre>
+ 
+<input [(ngModel)]="selectedValue"
+       [typeahead]="players"
+       typeaheadOptionField="name"
+       (typeaheadOnSelect)="onSelect($event)"
+       class="form-control">
+    </tab>
+    <tab heading="Team 2">
+        
+    </tab>
+    <tab heading="Team 3">Basic content 2</tab>
+  </tabset>
+</div>

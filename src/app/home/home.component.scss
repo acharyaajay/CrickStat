@@ -1,0 +1,26 @@
+span{
+    font-weight: bold;
+    background: lightgrey;
+    padding: .3em .8em;
+    cursor: pointer;
+}
+
+.play-counter{
+
+    padding: 3em;
+    border: 1px solid lightgrey;
+    margin-bottom: 1em;
+    input{
+
+        padding: 1em;
+        margin-bottom: 2em;;
+    }
+}
+.active{
+    background: lightgrey;
+    border: 4px solid black;
+}
+
+.notactive{
+    background: darkgrey;
+}
